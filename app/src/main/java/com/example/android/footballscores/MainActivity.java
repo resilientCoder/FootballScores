@@ -9,27 +9,19 @@ public class MainActivity extends AppCompatActivity {
     // Team A variables
     // Tracks the score Team A.
     int goals_A = 0;
-
     // Tracks the fouls by Team A players.
     int fouls_A = 0;
-
     // Tracks Yellow Cards issued to Team A players.
     int yellowCards_A = 0;
-
     // Tracks Red Cards issued to Team A players.
     int redCards_A = 0;
-
-
     // Team B variables
     // Tracks the score Team B.
     int goals_B = 0;
-
     // Tracks the fouls by Team B players.
     int fouls_B = 0;
-
     // Tracks Yellow Cards issued to Team B players.
     int yellowCards_B = 0;
-
     // Tracks Red Cards issued to Team B players.
     int redCards_B = 0;
 
@@ -50,55 +42,52 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Methods for Team A.
      */
-
     public void buttonPressed_Goal_A(View view) {
-        goals_A = goals_A + 1;
+        goals_A++;
         displayScore_A(goals_A);
     }
 
     public void buttonPressed_Foul_A(View view) {
-        fouls_A = fouls_A + 1;
+        fouls_A++;
         displayFouls_A(fouls_A);
     }
 
     public void buttonPressed_YellowCard_A(View view) {
-        yellowCards_A = yellowCards_A + 1;
+        yellowCards_A++;
         displayYellowCards_A(yellowCards_A);
     }
 
     public void buttonPressed_RedCard_A(View view) {
-        redCards_A = redCards_A + 1;
+        redCards_A++;
         displayRedCards_A(redCards_A);
     }
 
     /**
      * Methods for Team B.
      */
-
     public void buttonPressed_Goal_B(View view) {
-        goals_B = goals_B + 1;
+        goals_B++;
         displayScore_B(goals_B);
     }
 
     public void buttonPressed_Foul_B(View view) {
-        fouls_B = fouls_B + 1;
+        fouls_B++;
         displayFouls_B(fouls_B);
     }
 
     public void buttonPressed_YellowCard_B(View view) {
-        yellowCards_B = yellowCards_B + 1;
+        yellowCards_B++;
         displayYellowCards_B(yellowCards_B);
     }
 
     public void buttonPressed_RedCard_B(View view) {
-        redCards_B = redCards_B + 1;
+        redCards_B++;
         displayRedCards_B(redCards_B);
     }
 
     /**
      * Methods to Reset the Score and Fouls.
      **/
-
     public void reset(View view) {
         goals_A = 0;
         goals_B = 0;
