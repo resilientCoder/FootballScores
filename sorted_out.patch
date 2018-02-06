@@ -1,0 +1,9 @@
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- settings.gradle	(revision Shelved version)
++++ settings.gradle	(revision Shelved version)
+@@ -0,0 +1,1 @@
++include ':app'

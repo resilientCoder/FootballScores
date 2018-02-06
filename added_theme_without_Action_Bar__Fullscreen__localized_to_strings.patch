@@ -1,0 +1,327 @@
+Index: app/src/main/java/com/example/android/footballscores/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/android/footballscores/MainActivity.java	(revision 7e2a866ec84223d2fbe4361d1a64dbd63605931c)
++++ app/src/main/java/com/example/android/footballscores/MainActivity.java	(revision )
+@@ -9,27 +9,19 @@
+     // Team A variables
+     // Tracks the score Team A.
+     int goals_A = 0;
+-
+     // Tracks the fouls by Team A players.
+     int fouls_A = 0;
+-
+     // Tracks Yellow Cards issued to Team A players.
+     int yellowCards_A = 0;
+-
+     // Tracks Red Cards issued to Team A players.
+     int redCards_A = 0;
+-
+-
+     // Team B variables
+     // Tracks the score Team B.
+     int goals_B = 0;
+-
+     // Tracks the fouls by Team B players.
+     int fouls_B = 0;
+-
+     // Tracks Yellow Cards issued to Team B players.
+     int yellowCards_B = 0;
+-
+     // Tracks Red Cards issued to Team B players.
+     int redCards_B = 0;
+ 
+@@ -50,55 +42,52 @@
+     /**
+      * Methods for Team A.
+      */
+-
+     public void buttonPressed_Goal_A(View view) {
+-        goals_A = goals_A + 1;
++        goals_A++;
+         displayScore_A(goals_A);
+     }
+ 
+     public void buttonPressed_Foul_A(View view) {
+-        fouls_A = fouls_A + 1;
++        fouls_A++;
+         displayFouls_A(fouls_A);
+     }
+ 
+     public void buttonPressed_YellowCard_A(View view) {
+-        yellowCards_A = yellowCards_A + 1;
++        yellowCards_A++;
+         displayYellowCards_A(yellowCards_A);
+     }
+ 
+     public void buttonPressed_RedCard_A(View view) {
+-        redCards_A = redCards_A + 1;
++        redCards_A++;
+         displayRedCards_A(redCards_A);
+     }
+ 
+     /**
+      * Methods for Team B.
+      */
+-
+     public void buttonPressed_Goal_B(View view) {
+-        goals_B = goals_B + 1;
++        goals_B++;
+         displayScore_B(goals_B);
+     }
+ 
+     public void buttonPressed_Foul_B(View view) {
+-        fouls_B = fouls_B + 1;
++        fouls_B++;
+         displayFouls_B(fouls_B);
+     }
+ 
+     public void buttonPressed_YellowCard_B(View view) {
+-        yellowCards_B = yellowCards_B + 1;
++        yellowCards_B++;
+         displayYellowCards_B(yellowCards_B);
+     }
+ 
+     public void buttonPressed_RedCard_B(View view) {
+-        redCards_B = redCards_B + 1;
++        redCards_B++;
+         displayRedCards_B(redCards_B);
+     }
+ 
+     /**
+      * Methods to Reset the Score and Fouls.
+      **/
+-
+     public void reset(View view) {
+         goals_A = 0;
+         goals_B = 0;
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision 7e2a866ec84223d2fbe4361d1a64dbd63605931c)
++++ app/src/main/res/layout/activity_main.xml	(revision )
+@@ -14,11 +14,11 @@
+             android:background="@drawable/grassbg"
+             android:orientation="vertical">
+ 
+-
+             <LinearLayout
++                android:id="@+id/teamsView"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+-                android:layout_margin="15dp"
++                android:layout_marginTop="15dp"
+                 android:orientation="horizontal">
+ 
+                 <TextView
+@@ -43,7 +43,7 @@
+ 
+                 <TextView
+                     android:layout_width="0dp"
+-                    android:layout_height="wrap_content"
++                    android:layout_height="match_parent"
+                     android:layout_gravity="end"
+                     android:layout_weight="1"
+                     android:fontFamily="sans-serif-light"
+@@ -53,6 +53,19 @@
+ 
+             </LinearLayout>
+ 
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="horizontal">
++
++                <View
++                    android:layout_width="match_parent"
++                    android:layout_height="2dp"
++                    android:layout_marginBottom="15dp"
++                    android:background="#AAAAAA" />
++
++            </LinearLayout>
++
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+@@ -62,6 +75,7 @@
+ 
+ 
+                 <LinearLayout
++                    android:id="@+id/TeamAbuttons"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+@@ -69,6 +83,7 @@
+ 
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamAgoal"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -89,7 +104,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++                            android:text="@string/_0"
+                             android:textColor="#FFFFFF"
+                             android:textSize="36sp" />
+                     </LinearLayout>
+@@ -108,6 +123,7 @@
+                     </LinearLayout>
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamAfoul"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -129,7 +145,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++                            android:text="@string/_0"
+                             android:textColor="#FFFFFF"
+                             android:textSize="24sp" />
+                     </LinearLayout>
+@@ -148,6 +164,7 @@
+                     </LinearLayout>
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamAyellow"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -168,7 +185,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++                            android:text="@string/_0"
+                             android:textColor="#FFFFFF"
+                             android:textSize="24sp" />
+                     </LinearLayout>
+@@ -187,6 +204,7 @@
+                     </LinearLayout>
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamAred"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -208,7 +226,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++                            android:text="@string/_0"
+                             android:textColor="#FFFFFF"
+                             android:textSize="24sp" />
+                     </LinearLayout>
+@@ -216,24 +234,25 @@
+                 </LinearLayout>
+ 
+                 <LinearLayout
+-                    android:layout_width="1dp"
++                    android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:orientation="vertical">
+ 
+                     <View
+                         android:layout_width="1dp"
+                         android:layout_height="match_parent"
+-                        android:layout_margin="24dp"
+-                        android:background="#FFFFFF" />
++                        android:background="#AAAAAA" />
+                 </LinearLayout>
+ 
+                 <LinearLayout
++                    android:id="@+id/TeamBbuttons"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:orientation="vertical">
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamBgoal"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -245,7 +264,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++                            android:text="@string/_0"
+                             android:textColor="#FFFFFF"
+                             android:textSize="36sp" />
+ 
+@@ -273,6 +292,7 @@
+                     </LinearLayout>
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamBfoul"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -284,7 +304,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++                            android:text="@string/_0"
+                             android:textColor="#FFFFFF"
+                             android:textSize="24sp" />
+ 
+@@ -312,6 +332,7 @@
+                     </LinearLayout>
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamByellow"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -323,7 +344,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++
+                             android:textColor="#FFFFFF"
+                             android:textSize="24sp" />
+ 
+@@ -350,6 +371,7 @@
+                     </LinearLayout>
+ 
+                     <LinearLayout
++                        android:id="@+id/TeamBred"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+@@ -361,7 +383,7 @@
+                             android:layout_weight="1"
+                             android:fontFamily="sans-serif-light"
+                             android:gravity="center"
+-                            android:text="0"
++
+                             android:textColor="#FFFFFF"
+                             android:textSize="24sp" />
+ 
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 7e2a866ec84223d2fbe4361d1a64dbd63605931c)
++++ app/src/main/res/values/strings.xml	(revision )
+@@ -9,4 +9,5 @@
+     <string name="vs">vs.</string>
+     <string name="yellow_card">yellow card</string>
+     <string name="red_card">red card</string>
++    <string name="_0">0</string>
+ </resources>
