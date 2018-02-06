@@ -1,0 +1,402 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/grassbg"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="start"
+                    android:text="@string/team_a"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="@string/vs"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/team_b"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            android:onClick="buttonPressed_Goal_A"
+                            android:text="@string/goal" />
+
+                        <TextView
+                            android:id="@+id/a_score"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="36sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="15dp"
+                            android:background="#AAAAAA" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:background="#000000"
+                            android:onClick="buttonPressed_Foul_A"
+                            android:text="@string/foul"
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/a_fouls"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="15dp"
+                            android:background="#AAAAAA" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:background="#FFEB3B"
+                            android:onClick="buttonPressed_YellowCard_A"
+                            android:text="@string/yellow_card" />
+
+                        <TextView
+                            android:id="@+id/a_yellow_cards"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="15dp"
+                            android:background="#AAAAAA" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:background="#F44336"
+                            android:onClick="buttonPressed_RedCard_A"
+                            android:text="@string/red_card"
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/a_red_cards"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="24dp"
+                        android:background="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/b_score"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="36sp" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            android:onClick="buttonPressed_Goal_B"
+                            android:text="@string/goal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="15dp"
+                            android:background="#AAAAAA" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/b_fouls"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="1"
+                            android:background="#000000"
+                            android:onClick="buttonPressed_Foul_B"
+                            android:text="@string/foul"
+                            android:textColor="#FFFFFF" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="15dp"
+                            android:background="#AAAAAA" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/b_yellow_cards"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="1"
+                            android:background="#FFEB3B"
+                            android:onClick="buttonPressed_YellowCard_B"
+                            android:text="@string/yellow_card" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="15dp"
+                            android:background="#AAAAAA" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/b_red_cards"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="1"
+                            android:background="#F44336"
+                            android:onClick="buttonPressed_RedCard_B"
+                            android:text="@string/red_card"
+                            android:textColor="#FFFFFF" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="reset"
+                    android:text="@string/reset"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </TableLayout>
+
+</ScrollView>
